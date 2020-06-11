@@ -1,0 +1,86 @@
+{% load static %}
+
+<html>
+<title>Excelsior</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+
+<body>
+
+    
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+    <div class="w3-top">
+        <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+          <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+          <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+          <a href="/articles" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Articles</a>
+          <a href="/poems" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Poems</a>
+          <a href="/miscellaneouss" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Miscellanea</a>
+          <a href="{% url 'article_new' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">New Article</a>
+          <a href="{% url 'poem_new' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">New Poem</a>
+        </div>
+      
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+          <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+        </div>
+      </div>
+
+<!-- Header -->
+<header class="w3-center w3-red " style="padding:200px">
+  <h1 class="w3-xlarge">IET LUCKNOW's</h1>
+  <h1><a href="/">Excelsior</a></h1>
+</header>
+
+<body>
+    <div class="content container">        
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+    </div>
+</body>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-white w3-center w3-large"> 
+  <a href="https://www.google.com/"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>  
+  <a href="https://www.google.com/"><i class="fa fa-instagram w3-hover-opacity"></i></a>  
+  <a href="https://www.google.com/"><i class="fa fa-snapchat w3-hover-opacity"></i></a>  
+  <a href="https://www.google.com/"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>  
+  <a href="https://www.google.com/"><i class="fa fa-twitter w3-hover-opacity"></i></a>  
+  <a href="https://www.google.com/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>  
+  <p>Excelsior Team</p>
+</footer>
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+</script>
+
+</body>
+</html>

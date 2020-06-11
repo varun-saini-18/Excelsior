@@ -1,0 +1,61 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <html>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+    h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    </style>
+    <body class="w3-white">
+    
+    </div>
+
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+          <div class="w3-twothird">
+            <h1>Poems</h1>
+            <h5 class="w3-padding-32">A poem is a collection of spoken or written words that expresses ideas or emotions in a powerfully vivid and imaginative style. A poem is comprised of a particular rhythmic and metrical pattern. In fact, it is a literary technique that is different from prose or ordinary speech, as it is either in metrical pattern or in free verse. Writers or poets express their emotions through this medium more easily, as they face difficulty when expressing through some other medium.</h5>
+      
+            <p class="w3-text-grey">These are a few lines from The Song of Hiawatha, a classic epic poem that presents an American Indian legend of a loving, brave, patriotic, and stoic hero, but which bears resemblance to Greek myths of Homer.</p>
+          </div>
+        </div>
+      </div>
+        
+            {% for poem in poems %}
+            <div style="padding-left:230px">
+                <div class="w3-card-4 w3-margin w3-white">
+                    
+                    <div class="w3-container">
+                    <h2 style="text-align:center"><b>{{ poem.title }}</b></h2>
+                    <!-- <h5>{{ article.preview|linebreaksbr }}, <span class="w3-opacity">{{ article.published_date }}</span></h5> -->
+                    <h3 style="text-align:center">{{ poem.preview|linebreaksbr }}</h3>
+                    </div>
+        
+                    <div class="w3-container">
+                    <div class="w3-row">
+                        <div class="w3-col m8 s12">
+                        <p><a href="{% url 'poem_detail' pk=poem.pk %}" class="w3-button w3-padding-large w3-white" ><b>READ MORE »</b></a></p>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <hr>
+            
+            
+            {% endfor %}
+    
+    
+    </body>
+
+</html>
+
+
+
+{% endblock %}

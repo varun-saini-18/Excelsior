@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="miscellaneous">
+        {% if miscellaneous.published_date %}
+            <div class="date">
+                {{ miscellaneous.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ miscellaneous.title }}</h2>
+        <p>{{ miscellaneous.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

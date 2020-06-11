@@ -1,0 +1,61 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <html>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+    h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    </style>
+    <body class="w3-white">
+    
+    </div>
+
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+          <div class="w3-twothird">
+            <h1>Articles</h1>
+            <h5 class="w3-padding-32">The indefinite article takes two forms. It’s the word a when it precedes a word that begins with a consonant. It’s the word an when it precedes a word that begins with a vowel. The indefinite article indicates that a noun refers to a general idea rather than a particular thing. For example, you might ask your friend, “Should I bring a gift to the party?” Your friend will understand that you are not asking about a specific type of gift or a specific item.</h5>
+      
+            <p class="w3-text-grey">There are a few exceptions to the general rule of using a before words that start with consonants and an before words that begin with vowels. The first letter of the word honor, for example, is a consonant, but it’s unpronounced. In spite of its spelling, the word honor begins with a vowel sound. </p>
+          </div>
+        </div>
+      </div>
+        
+            {% for article in articles %}
+            <div style="padding-left:230px">
+                <div class="w3-card-4 w3-margin w3-white">
+                
+                    <div class="w3-container">
+                    <h2 style="text-align:center"><b>{{ article.title }}</b></h2>
+                    <!-- <h5>{{ article.preview|linebreaksbr }}, <span class="w3-opacity">{{ article.published_date }}</span></h5> -->
+                    <h3 style="text-align:center">{{ article.preview|linebreaksbr }}</h3>
+                    </div>
+        
+                    <div class="w3-container">
+                    <div class="w3-row">
+                        <div class="w3-col m8 s12">
+                        <p><a href="{% url 'article_detail' pk=article.pk %}" class="w3-button w3-padding-large w3-white" ><b>READ MORE »</b></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+            <hr>
+            
+            
+            {% endfor %}
+    
+    
+    </body>
+
+</html>
+
+
+
+{% endblock %}

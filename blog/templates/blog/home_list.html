@@ -1,0 +1,192 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <html>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+    h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    </style>
+    <body class="w3-white">
+
+    </div>
+
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+          <div class="w3-twothird">
+            <h1>About Excelsior</h1>
+            <h5 class="w3-padding-32">Power of the Pen is an interscholastic writing league founded by Lorraine B. Merrill in 1986. It is a non-profit creative writing program for students in grades seven and eight in the U.S. state of Ohio.</h5>
+      
+            <p class="w3-text-grey">An online celebration of the 2020 statewide awards is still available for viewing! We announce the winners of the 2020 Poetry Contest and Powerful Pen, Promising Young Talent, and Humor awards. Regional Best of the Best is announced, as well. Guest author Margaret Peterson Haddix, poet George Bilgere, and television writer Sage Boggs all appear on video to honor Power of the Pen writers!</p>
+          </div>
+        </div>
+      </div>
+      
+      
+        
+        {% for article in articles %}
+        <div style="padding-left:230px">
+            <div class="w3-card-4 w3-margin w3-white">
+                
+                <div class="w3-container">
+                <h2 style="text-align:center"><b>{{ article.title }}</b></h2>
+                <!-- <h5>{{ article.preview|linebreaksbr }}, <span class="w3-opacity">{{ article.published_date }}</span></h5> -->
+                <h3 style="text-align:center">{{ article.preview|linebreaksbr }}</h3>
+                </div>
+
+                <div class="w3-container">
+                <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                    <p><a href="{% url 'article_detail' pk=article.pk %}" class="w3-button w3-padding-large w3-white" ><b>READ MORE »</b></a></p>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+        <hr>
+
+
+        {% endfor %}
+
+
+        {% for poem in poems %}
+        <div style="padding-left:230px">
+            <div class="w3-card-4 w3-margin w3-white">
+                
+                <div class="w3-container">
+                <h2 style="text-align:center"><b>{{ poem.title }}</b></h2>
+                <!-- <h5>{{ article.preview|linebreaksbr }}, <span class="w3-opacity">{{ article.published_date }}</span></h5> -->
+                <h3 style="text-align:center">{{ poem.preview|linebreaksbr }}</h3>
+                </div>
+
+                <div class="w3-container">
+                <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                    <p><a href="{% url 'poem_detail' pk=poem.pk %}" class="w3-button w3-padding-large w3-white" ><b>READ MORE »</b></a></p>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+        <hr>
+
+
+        {% endfor %}
+
+        {% for miscellaneous in miscellaneouss %}
+        <div style="padding-left:230px">
+            <div class="w3-card-4 w3-margin w3-white">
+                
+                <div class="w3-container">
+                <h2 style="text-align:center"><b>{{ miscellaneous.title }}</b></h2>
+                <!-- <h5>{{ article.preview|linebreaksbr }}, <span class="w3-opacity">{{ article.published_date }}</span></h5> -->
+                <h3 style="text-align:center">{{ miscellaneous.preview|linebreaksbr }}</h3>
+                </div>
+
+                <div class="w3-container">
+                <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                    <p><a href="{% url 'miscellaneous_detail' pk=miscellaneous.pk %}" class="w3-button w3-padding-large w3-white" ><b>READ MORE »</b></a></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+
+        {% endfor %}
+
+
+    <!-- <div class="w3-content" style="max-width:1400px">
+
+    
+        <div class="w3-row" >
+    
+        
+            {% for article in articles %}
+            
+            <div class="w3-card-4 w3-margin w3-white">
+                
+                <div class="w3-container">
+                <h2 style="text-align:center"><b>{{ article.title }}</b></h2>
+                <h3 style="text-align:center">{{ article.preview|linebreaksbr }}</h3>
+            </div>
+    
+                <div class="w3-container">
+                <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                    <p><a href="{% url 'article_detail' pk=article.pk %}" class="w3-button w3-padding-large w3-white" ><b>READ MORE »</b></a></p>
+                    </div>
+                     </div>
+                </div>
+                
+            </div>
+            <hr>
+            </div>
+            
+            {% endfor %}
+
+            {% for poem in poems %}
+            
+            <div class="w3-card-4 w3-margin w3-white">
+                
+                <div class="w3-container">
+                <h2 style="text-align:center"><b>{{ poem.title }}</b></h2>
+                <h3 style="text-align:center">{{ poem.preview|linebreaksbr }}</h3>
+            </div>
+    
+                <div class="w3-container">
+                <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                    <p><a href="{% url 'poem_detail' pk=poem.pk %}" class="w3-button w3-padding-large w3-white" ><b>READ MORE »</b></a></p>
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+            <hr>
+            </div>
+            
+            {% endfor %}
+
+            {% for miscellaneous in miscellaneouss %}
+            
+            <div class="w3-card-4 w3-margin w3-white">
+                
+                <div class="w3-container">
+                <h2 style="text-align:center"><b>{{ miscellaneous.title }}</b></h2>
+                <h3 style="text-align:center">{{ miscellaneous.preview|linebreaksbr }}</h3>
+            </div>
+    
+                <div class="w3-container">
+                <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                    <p><a href="{% url 'miscellaneous_detail' pk=miscellaneous.pk %}" class="w3-button w3-padding-large w3-white" ><b>READ MORE »</b></a></p>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+            <hr>
+            </div>
+            
+            {% endfor %}
+    
+        </div>
+    
+        </div><br>
+        </div>
+    
+
+    </body>
+    </html> -->
+
+
+{% endblock %}

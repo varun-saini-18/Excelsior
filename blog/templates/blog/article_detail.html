@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<a class="btn btn-default" href="{% url 'article_edit' pk=article.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <div class="article">
+        {% if article.published_date %}
+            <div class="date">
+                {{ article.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
